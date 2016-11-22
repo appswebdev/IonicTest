@@ -12,6 +12,9 @@ app.controller('redditCtrl', function($scope, $http){
     }
 */
     angular.forEach(children, function(item){
+       if (item.data.thumbnail.length<9) {
+         item.data.thumbnail = 'https://upload.wikimedia.org/wikipedia/commons/4/43/Reddit.svg';
+       }
        $scope.reddits.push(item.data);
     });
   });
